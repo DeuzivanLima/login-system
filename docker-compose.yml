@@ -1,0 +1,15 @@
+version: '3.11'
+
+services:
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 15432:5432
+    env_file:
+      - .env
+    networks:
+      - postgres-network
+
+networks: 
+  postgres-network:
+    driver: bridge

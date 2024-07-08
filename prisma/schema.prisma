@@ -9,12 +9,13 @@ datasource db {
 
 model User {
   id BigInt @id @default(autoincrement())
-  roles String[] @default(["write", "read", "normal"])
-  posts BigInt[] @default([])
-  rooms BigInt[] @default([])
+  roles String[] @default(["write", "read"])
+  posts_id_list BigInt[] @default([])
+  rooms_id_list BigInt[] @default([])
   created_at DateTime @default(now())
 
   password_hash String
+  username String @unique
 }
 
 model Post {
@@ -27,8 +28,8 @@ model Post {
 
 model Room {
   id BigInt @id @default(autoincrement())
-  users_list BigInt[] @default([])
-  messages_list BigInt[] @default([])
+  users_id_list BigInt[] @default([])
+  messages_id_list BigInt[] @default([])
   created_at DateTime @default(now())
 
   name String

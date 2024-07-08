@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from '../Button'
 import { Input } from '../Input'
 
-export const Login = () => {
+export const Register = () => {
     const [isLoding, setIsLoding] = useState<boolean>(false)
     const redirect = useRouter()
 
@@ -16,7 +16,7 @@ export const Login = () => {
         try {
             const formData = new FormData(event.currentTarget)
 
-            const res = await (await fetch('/api/sessions', {
+            const res = await (await fetch('/api/register', {
                 method: 'POST',
                 body: JSON.stringify({
                     username: formData.get('username'),
@@ -28,9 +28,9 @@ export const Login = () => {
             if(res.status != 200)
                 throw body.message
 
-            redirect.push('/')
+            redirect.push('/login')
         } catch(error) {
-            alert(error)
+            console.log(error)
             
         } finally {
             setIsLoding(false)
@@ -47,7 +47,7 @@ export const Login = () => {
                 type='password'
                 name='password'/>
             <Button
-                value={isLoding ? 'Loding...' : 'Login'}
+                value={isLoding ? 'Registing...' : 'Register'}
                 type={'submit'}/>
         </form>
     )
