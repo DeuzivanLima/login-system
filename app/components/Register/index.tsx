@@ -4,6 +4,7 @@ import styles from './index.module.scss'
 import { useRouter } from 'next/navigation'
 import { Button } from '../Button'
 import { Input } from '../Input'
+import Link from 'next/link'
 
 export const Register = () => {
     const [isLoding, setIsLoding] = useState<boolean>(false)
@@ -49,6 +50,9 @@ export const Register = () => {
             <Button
                 value={isLoding ? 'Registing...' : 'Register'}
                 type={'submit'}/>
+            <footer>
+                <Link href={'/login'}>I have a account</Link>
+            </footer>
         </form>
     )
 }

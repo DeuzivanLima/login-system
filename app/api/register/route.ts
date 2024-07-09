@@ -22,5 +22,5 @@ export const POST = async (req: NextRequest) => {
     } catch(error) {
         return NextResponse.json({message: error}, {status: 500})
     }
-    return NextResponse.json({where: 'oui'}, {status: 200})
+    return NextResponse.json({}, {status: 200})
 }

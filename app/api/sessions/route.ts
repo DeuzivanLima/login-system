@@ -15,6 +15,7 @@ export const POST = async (req: NextRequest) => {
     try {
         const data = scheme.parse(await req.json())
         const password_hash_req = createHash('sha256').update(data.password).digest('hex')
+        
         const user = await db.user.findUnique({
             where: {
                 username: data.username,

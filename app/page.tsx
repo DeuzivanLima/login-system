@@ -10,7 +10,12 @@ export default function Home() {
     <Layout className={styles.container}>
       {
         cookieStore.get('session')?.value == null ?
-          <Link href='/login'>Você não está logado</Link> : <h1>Logado né pae</h1>
+          <div>
+            Você não está logado,
+            <Link href='/login'> clique aqui</Link> 
+          </div>
+          :
+          <h1>Logado né pae</h1>
       }
     </Layout>
   );

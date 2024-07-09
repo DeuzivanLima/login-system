@@ -1,0 +1,19 @@
+.basic_information_card {
+  padding: 1rem;
+  background-color: black;
+  height: 30vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-weight: 500;
+  }
+
+  span {
+    color: #505050;
+    font-size: 11pt;
+    text-align: end;
+  }
+}
