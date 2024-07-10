@@ -1,6 +1,6 @@
 .container {
   padding: 1rem;
-  background-color: #202020;
+  background-color: #151515;
   color: white;
   margin: 1rem;
   min-height: 100px;
@@ -13,5 +13,9 @@
     color: #404040;
     font-size: 10pt;
     align-self: flex-end;
+  }
+
+  .username {
+    color: #707070;
   }
 }

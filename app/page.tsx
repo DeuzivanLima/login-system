@@ -1,21 +1,21 @@
 import { cookies } from 'next/headers';
 import { Layout } from './components/Layout';
 import styles from './page.module.scss';
-import Link from 'next/link';
+import { NavigationBar } from './components/NavigationBar';
+import { NotLogged } from './components/NotLogged';
+import { Home } from './components/Home';
 
-export default function Home() {
+export default function HomePage() {
   const cookieStore = cookies()
 
   return (
     <Layout className={styles.container}>
+      <NavigationBar title='Home'/>
       {
         cookieStore.get('session')?.value == null ?
-          <div>
-            Você não está logado,
-            <Link href='/login'> clique aqui</Link> 
-          </div>
+          <NotLogged/>
           :
-          <h1>Logado né pae</h1>
+          <Home/>
       }
     </Layout>
   );

@@ -41,20 +41,22 @@ export const Login = () => {
   }
 
   return (
-    <form className={styles.container} onSubmit={onSubmit}>
-      <Input
-        placeholder='Username'
-        name='username' />
-      <Input
-        placeholder='Password'
-        type='password'
-        name='password' />
-      <Button
-        value={isLoding ? 'Loding...' : 'Login'}
-        type={'submit'} />
-      <footer>
-        <Link href={'/register'}>I don't have a account</Link>
-      </footer>
-    </form>
+    <>
+      <form className={styles.container} onSubmit={onSubmit}>
+        <Input
+          placeholder='Username'
+          name='username' />
+        <Input
+          placeholder='Password'
+          type='password'
+          name='password' />
+        <Button
+          value={isLoding ? 'Loding...' : 'Login'}
+          type={'submit'} />
+        <footer>
+          <Link href={'/register'}>I don&apost have a account</Link>
+        </footer>
+      </form>
+    </>
   )
 }

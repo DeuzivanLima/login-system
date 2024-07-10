@@ -1,0 +1,42 @@
+.container {
+  padding: 1.5rem;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-weight: 450;
+    color: white;
+    font-size: 14pt;
+  }
+
+  .menu {
+    color: white;
+    z-index: 10;
+  }
+}
+.menu_option {
+  position: fixed;
+  top: 0;
+  display: block;
+  color: white;
+  height: 100vh;
+  width: 70%;
+  max-width: 400px;
+  right: 0;
+  background-color: black;
+  padding-top: 4rem;
+  transition-duration: 1s;
+
+  li {
+    .btn {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: #101010;
+      gap: 1rem;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
